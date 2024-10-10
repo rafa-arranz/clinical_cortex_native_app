@@ -2,7 +2,7 @@
 In this repository I'll walk you through how I built a Cortex Analyst Native App specifically designed for clinical use, leveraging Snowflake's capabilities. This project was inspired by and contains assets from the Medium Blog "Enable Natural Language Querying of Your Snowflake Marketplace Data with Native Apps & Cortex Analyst" by Rachel Blum & Rich Murnane, Snowflake Solution Innovation Team.
 
 Pre-reqs for this application include:
-- Clone or download this Snowflake-Labs github repository
+- Clone or download this github repository
 - Verify [Cortex Analyst availability](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst#region-availability) in your Snowflake region (currently in PuPr)
 - A Snowflake role with elevated privileges (example given in provider.sql script), or the ACCOUNTADMIN role to your Snowflake account
 

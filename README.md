@@ -1,4 +1,4 @@
-# Demo Cortex Analyst Native App 
+# Demo Clinical Cortex Analyst Native App 
 In this repository I'll walk you through how I built a Cortex Analyst Native App specifically designed for clinical use, leveraging Snowflake's capabilities. This project was inspired by and contains assets from the Medium Blog "Enable Natural Language Querying of Your Snowflake Marketplace Data with Native Apps & Cortex Analyst" by Rachel Blum & Rich Murnane, Snowflake Solution Innovation Team.
 
 Pre-reqs for this application include:

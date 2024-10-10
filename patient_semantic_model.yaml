@@ -3,7 +3,7 @@ tables:
   - name: PATIENT_METRICS
     description: '  '
     base_table:
-      database: MEDICAL_CORTEX_ANALYST_APP
+      database: CLINICAL_CORTEX_ANALYST_APP
       schema: MEDICAL
       table: PATIENT_METRICS
     dimensions:
@@ -160,41 +160,92 @@ tables:
       - name: LANGUAGE_INFERRED
         synonyms:
           - '  '
-        description: Language inferred from patient interactions.__
+        description: Language inferred as primary means of communication.__
         expr: LANGUAGE_INFERRED
         data_type: TEXT
+        sample_values:
+          - Not Hispanic
+          - N/A
+          - Prefers Spanish
+          - English Only (does not speak Spanish)
+          - Both Spanish and English
       - name: OCCUPATION
         synonyms:
           - '  '
         description: Occupation of the patient.__
         expr: OCCUPATION
         data_type: TEXT
+        sample_values:
+          - Employed
+          - N/A
+          - Retired, Homemaker or Student
+          - Self-Employed
       - name: DIAG_LANGUAGE
         synonyms:
           - '  '
-        description: The language used by the patient to communicate their diagnosis.__
+        description: Primary language spoken by the patient.__
         expr: DIAG_LANGUAGE
         data_type: TEXT
+        sample_values:
+          - english
+          - german
       - name: DIAG_DESCRIPTION
         synonyms:
           - '  '
-        description: Diagnosis Description__
+        description: Diagnosis descriptions for patients, including various medical
+          conditions and examination types.__
         expr: DIAG_DESCRIPTION
         data_type: TEXT
+        sample_values:
+          - heart failure, unspecified (*There are also more specific ICD-10 codes,
+            if applicable, e.g., left ventricular failure [I50.1], acute systolic
+            (congestive) heart failure [I50.21], chronic systolic (congestive) heart
+            failure [I50.22], etc.)
+          - encounter for general adult medical examination without abnormal findings
+          - coronary artery atherosclerosis of unspecified type of vessel, native,
+            or graft
+          - diabetes mellitus without mention of complications, type II or unspecified
+            type, not stated as uncontrolled
+          - encounter for immunization (ICD-10 code required first for any routine
+            childhood examination.)
       - name: CLINICAL_NOTES
         synonyms:
           - '  '
-        description: Clinical notes and observations made by healthcare providers
-          regarding patient care and treatment.__
+        description: Clinical notes from patient visits, including symptoms, treatment
+          plans, and assessment of patient's condition.__
         expr: CLINICAL_NOTES
         data_type: TEXT
+        sample_values:
+          - None
+          - Patient reports that depressive symptoms continue. Symptoms are reported
+            to be more frequent and/or more intense. Anergia is present. Increased
+            symptoms of anhedonia are present. Patient’s difficulty with concentrating
+            has not changed. Patient reports continued feelings of sadness and occasional
+            guilt. Sleep has improved with the use of PRN Ambient CR at HS. Patient
+            convincingly denies suicidal ideas or intention.
+          - 'Patient is a 46 year old Hispanic male presenting for continuation of
+            chemotherapy for previously diagnosed B-cell multicentric lymphoma. Patient
+            was started on CHOP chemotherapy last week and has been doing very well
+            since receiving doxorubicin. Patient’s lymph nodes have gotten much smaller.
+            Patient reports some loose stool, yet improved with metronidazole. Current
+            medications include prednisolone. Assessment: patient is in a strong partial
+            remission based on today’s physical exam. He is also doing very well since
+            starting chemotherapy. A CBC today was unremarkable and adequate for chemotherapy.
+            Patient was given oral cyclophosphamide and furosemide and instructed
+            to take at home.'
     time_dimensions:
       - name: LAST_APPT_DATE
         synonyms:
           - '  '
-        description: Last Appointment Date__
+        description: Date of the patient's most recent appointment.__
         expr: LAST_APPT_DATE
         data_type: DATE
+        sample_values:
+          - '2023-12-06'
+          - '2023-12-08'
+          - '2023-12-09'
+          - '2023-12-28'
+          - '2023-12-15'
     measures:
       - name: SOURCE_MEMBER_ID
         synonyms:
@@ -581,3 +632,9 @@ tables:
         description: Unique identifier for each patient diagnosis.__
         expr: DIAG_ID
         data_type: NUMBER
+        sample_values:
+          - '36'
+          - '54'
+          - '8'
+          - '2'
+          - '55'

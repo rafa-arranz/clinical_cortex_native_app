@@ -1,7 +1,7 @@
 create or replace application role app_public;
 
 drop schema if exists src;
-create or replace schema src;
+create schema src;
 grant usage on schema src 
     to application role app_public;
 
@@ -12,7 +12,7 @@ grant usage on schema medical
 
 
 --create proxy views here as well
-create or replace view medical.patient_metrics as 
+create view medical.patient_metrics as 
     select *
     from shared_content.patient_metrics;
 
@@ -21,7 +21,7 @@ create or replace view medical.patient_metrics as
 grant select on view medical.patient_metrics to application role app_public;
 
 
-create or replace stage if not exists src.public_stage directory = (enable = true) ;
+create stage if not exists src.public_stage directory = (enable = true) ;
 grant read, write on stage src.public_stage 
     to application role app_public;
 
@@ -74,7 +74,7 @@ comment on procedure src.sp_init()
     is '{"origin":"sf_sit","name":"na_demo","version":{"major":1, "minor":0},"attributes":{"component":"clinical_cortex_analyst_app"}}';
 
 
-CREATE OR REPLACE STREAMLIT src.ux
+CREATE STREAMLIT src.ux
   FROM '/'
   MAIN_FILE = '/ux_main.py';
 

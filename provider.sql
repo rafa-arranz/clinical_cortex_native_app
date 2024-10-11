@@ -35,7 +35,7 @@ CREATE OR REPLACE STAGE medical.setup_stage
   DIRECTORY = ( ENABLE = TRUE )
 ;
 
--- IMPORTANTdownload data.csv.gz file from the git repository and upload it the medical.setup_stage
+-- IMPORTANT: download data.csv.gz file from the git repository and upload it the medical.setup_stage
 -- This can be done via SnowSQL, SnowCLI, Python, VS Code or the File Upload Wizard in your Snowsight UI. 
 -- To use the File Upload UI, hover over the Data Icon in Snowsight > Add Data > Load Files into a Stage.
 

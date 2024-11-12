@@ -154,7 +154,7 @@ alter application package clinical_cortex_analyst_app_pkg
 alter application package clinical_cortex_analyst_app_pkg 
     set default release directive version=v01 patch=0;
 
---test locally in provider account
+-- test locally in provider account
 create application clinical_cortex_analyst_app from APPLICATION PACKAGE clinical_cortex_analyst_app_pkg;
 
 
@@ -173,6 +173,7 @@ create application clinical_cortex_analyst_app from APPLICATION PACKAGE clinical
     
 -- Step 9 - delete the current version (v01) of the CLINICAL_CORTEX_ANALYST_APP, and repeat step 6 to recreate it. 
 -- NOTE: This will ensure that the newly created CLINICAL_CORTEX_ANALYST_APP now references the .yaml file added to the CLINICAL_CORTEX_ANALYST_APP_PKG in step 8.
+
 drop application if exists clinical_cortex_analyst_app CASCADE;
 
 alter application package clinical_cortex_analyst_app_pkg
@@ -188,11 +189,13 @@ create application clinical_cortex_analyst_app from APPLICATION PACKAGE clinical
 -- Step 10 - Call an initialization Stored Procedure which is required to allow the Native App to read the semantic model yaml file.
 --call this stored procedure to copy semantic model yml file from "package" stage to "app" stage
 --note that by the end of CY24, this call should be able to be moved to the setup script 
+
 call clinical_cortex_analyst_app.src.sp_init();
 
 --go to the UI/UX and try it out
 
 --cleanup if needed
+
 drop application if exists clinical_cortex_analyst_app CASCADE;
 drop application package if exists clinical_cortex_analyst_app_pkg;
 

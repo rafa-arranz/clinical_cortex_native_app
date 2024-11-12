@@ -109,8 +109,6 @@ copy into CORTEX_ANALYST_DEMO.MEDICAL.PATIENT_METRICS from @medical.setup_stage/
 select * from CORTEX_ANALYST_DEMO.MEDICAL.PATIENT_METRICS limit 10;
 
 
-
-//*------------------------------------------------------------------------------------------------------------*\\
 // STEP 2 - SETUP YOUR PROVIDER NATIVE APP PACKAGE
 
 -- Step 2 - Create the application package and its associated schemas and stage
@@ -158,8 +156,6 @@ alter application package clinical_cortex_analyst_app_pkg
 create application clinical_cortex_analyst_app from APPLICATION PACKAGE clinical_cortex_analyst_app_pkg;
 
 
-
-//*------------------------------------------------------------------------------------------------------------*\\
 // STEP 3 - Create a Semantic Model .yaml file using our Semantic Model Generator
 
 

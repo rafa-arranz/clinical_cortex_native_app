@@ -1,4 +1,4 @@
-// STEP 1 - CREATE DATAABSE OBJECTS AND LOAD PATIENT DATA
+-- STEP 1 - CREATE DATAABSE OBJECTS AND LOAD PATIENT DATA
 use role accountadmin; 
 
 --or use a role with the following grants: 
@@ -109,7 +109,7 @@ copy into CORTEX_ANALYST_DEMO.MEDICAL.PATIENT_METRICS from @medical.setup_stage/
 select * from CORTEX_ANALYST_DEMO.MEDICAL.PATIENT_METRICS limit 10;
 
 
-// STEP 2 - SETUP YOUR PROVIDER NATIVE APP PACKAGE
+-- STEP 2 - SETUP YOUR PROVIDER NATIVE APP PACKAGE
 
 -- Step 2 - Create the application package and its associated schemas and stage
 
@@ -156,7 +156,7 @@ alter application package clinical_cortex_analyst_app_pkg
 create application clinical_cortex_analyst_app from APPLICATION PACKAGE clinical_cortex_analyst_app_pkg;
 
 
-// STEP 3 - Create a Semantic Model .yaml file using our Semantic Model Generator
+-- STEP 3 - Create a Semantic Model .yaml file using our Semantic Model Generator
 
 
 -- Step 7 - Optional: After setting up the Semantic Model Generator (preferably in Streamlit), input your desired semantic model name, define the maximum number of sample values per column based on your dataset, and select the CLINICAL_CORTEX_ANALYST_APP database, the MEDICAL schema, and the PATIENT_METRICS table (as shown in the image below).
